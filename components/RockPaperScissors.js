@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, Animated, SafeAreaView } from "react-native";
+import { Text, View, Animated, SafeAreaView } from "react-native";
 import React, { useState, useRef } from "react";
 import { Constants } from "expo-constants";
 import tailwind from "twrnc";
-import DisplayText from "./DisplayText";
+import DisplayText from "./ResultText";
 import Actions from "./Actions";
+import Header from "./Header";
 
 const RockPaperScissors = () => {
   const [userChoice, setUserChoice] = useState("r");
@@ -18,22 +19,23 @@ const RockPaperScissors = () => {
     // There are 3 choices: r = Rock, p = Paper, s = Scissors
 
     const choices = "rps";
-    const randomComputerChoice = Array.from(
-      { 1: 1 },
-      () => char[Math.floor(Math.random() * char.length)]
-    );
+    const randomComputerChoice =
+      choices[Math.floor(Math.random() * choices.length)];
+
     let resultString = "";
 
     if (choice === "r") {
-      resultString = randomComputerChoice === "s" ? "WON" : "LOST";
+      console.log(randomComputerChoice);
+      resultString = randomComputerChoice == "s" ? "WON" : "LOST";
     } else if (choice === "p") {
-      resultString = randomComputerChoice === "r" ? "WON" : "LOST";
+      console.log(randomComputerChoice);
+      resultString = randomComputerChoice == "r" ? "WON" : "LOST";
     } else if (choice === "s") {
-      resultString = randomComputerChoice === "p" ? "WON" : "LOST";
+      console.log(randomComputerChoice);
+      resultString = randomComputerChoice == "p" ? "WON" : "LOST";
     } else {
       resultString = "DRAW";
     }
-
     setUserChoice(choice);
     setComputerChoice(randomComputerChoice);
 
@@ -67,13 +69,14 @@ const RockPaperScissors = () => {
   return (
     // container
     <SafeAreaView style={tailwind`flex-1 pt-6`}>
+      <Header />
       {/* content */}
-      <View style={tailwind`flex-1 mb-1 bg-slate-300`}>
+      <View style={tailwind`flex-1 pb-8 bg-slate-700`}>
         {/* result */}
         <View style={tailwind`h-24 justify-end items-center`}>
           {/* resultText */}
           <Animated.Text
-            style={[tailwind`font-5xl font-bold`, { opacity: fadeAnimation }]}
+            style={[tailwind`text-5xl font-bold`, { opacity: fadeAnimation }]}
           >
             {result}
           </Animated.Text>
@@ -83,7 +86,11 @@ const RockPaperScissors = () => {
         <View style={tailwind`flex-1 flex-row `}>
           {!result ? (
             // readyText
-            <Text style={tailwind`-mt-12`}>Let's Play!</Text>
+            <Text
+              style={tailwind`-mt-12 self-center text-center w-full text-5xl font-bold `}
+            >
+              Let's Play!
+            </Text>
           ) : (
             <DisplayText
               userChoice={userChoice}
@@ -99,5 +106,3 @@ const RockPaperScissors = () => {
 };
 
 export default RockPaperScissors;
-
-const styles = StyleSheet.create({});

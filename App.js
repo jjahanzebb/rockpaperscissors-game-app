@@ -1,13 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import RockPaperScissors from "./components/RockPaperScissors";
+import tailwind from "twrnc";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Ionicons name="home" size={20} />
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={tailwind`flex-1`}>
+      <RockPaperScissors />
+      <StatusBar style="light" backgroundColor="#6a5300" />
     </View>
   );
 }
@@ -15,8 +16,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
