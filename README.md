@@ -1,6 +1,3 @@
-# rockpaperscissors-game-app
-Simple Rock, Paper, Scissors game application built using React Native.
-
 # Rock, Paper, Scissors Game Application
 
 <h2> 🛠️ RockPaperScissors application using:</h2>
