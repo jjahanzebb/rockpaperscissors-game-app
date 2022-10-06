@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import React from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import tailwind from "twrnc";
@@ -58,5 +58,3 @@ const ResultText = ({ userChoice, computerChoice }) => {
 };
 
 export default ResultText;
-
-const styles = StyleSheet.create({});

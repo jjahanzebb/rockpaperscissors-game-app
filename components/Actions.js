@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import tailwind from "twrnc";
@@ -43,5 +43,3 @@ const Actions = ({ play, canPlay }) => {
 };
 
 export default Actions;
-
-const styles = StyleSheet.create({});
