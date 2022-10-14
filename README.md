@@ -12,6 +12,4 @@
 <h2> 📱 Screens</h2>
 
 ### ⚫ Main Screen
-<img src="#" width="40%"/>
-
-
+Work in progress...
