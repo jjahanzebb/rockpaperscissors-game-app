@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+
 import RockPaperScissors from "./components/RockPaperScissors";
 import tailwind from "twrnc";
 
