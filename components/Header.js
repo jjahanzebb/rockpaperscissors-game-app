@@ -8,7 +8,7 @@ const Header = () => {
     <Appbar.Header style={tailwind`bg-yellow-400`}>
       <Appbar.Content
         title="Rock Paper Scissor"
-        style={tailwind`items-center scale-x-150	scale-y-150	`}
+        style={tailwind`items-center text-lg`}
       ></Appbar.Content>
     </Appbar.Header>
   );

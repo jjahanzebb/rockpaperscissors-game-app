@@ -26,15 +26,30 @@ const RockPaperScissors = () => {
 
     if (choice === "r") {
       console.log(randomComputerChoice);
-      resultString = randomComputerChoice == "s" ? "WON" : "LOST";
+      resultString =
+        randomComputerChoice == "r"
+          ? "DRAW"
+          : randomComputerChoice == "s"
+          ? "WON"
+          : "LOST";
     } else if (choice === "p") {
       console.log(randomComputerChoice);
-      resultString = randomComputerChoice == "r" ? "WON" : "LOST";
+      resultString =
+        randomComputerChoice == "p"
+          ? "DRAW"
+          : randomComputerChoice == "r"
+          ? "WON"
+          : "LOST";
     } else if (choice === "s") {
       console.log(randomComputerChoice);
-      resultString = randomComputerChoice == "p" ? "WON" : "LOST";
+      resultString =
+        randomComputerChoice == "s"
+          ? "DRAW"
+          : randomComputerChoice == "p"
+          ? "WON"
+          : "LOST";
     } else {
-      resultString = "DRAW";
+      resultString = "INVALID";
     }
     setUserChoice(choice);
     setComputerChoice(randomComputerChoice);
